@@ -1,0 +1,7 @@
+{
+    "name": "template-manager",
+    "type": "module",
+    "scripts": {
+        "create": "node scripts/create.js"
+    }
+}
