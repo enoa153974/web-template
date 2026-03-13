@@ -1,0 +1,94 @@
+// ==================================================
+// ■ レイアウトを調整するscss
+// class="設定したいmodifierつきクラス"を渡すことで、
+// セクションごとにレイアウト等変更可能
+// ==================================================
+// ==================================================
+// ■ セクションレイアウト
+// ページの区切り・余白・背景を管理
+// ==================================================
+
+// ------------------------------
+// ◆ 基本セクション
+// ------------------------------
+
+.l-section {
+    padding-block: var(--space-section);
+}
+
+
+// ------------------------------
+// ◆ padding調整
+// ------------------------------
+
+//上下余白小さめ
+.l-section--sm {
+    padding-block: var(--space-section-sm);
+}
+
+//上下余白大きめ
+.l-section--lg {
+    padding-block: var(--space-section-lg);
+}
+
+//上下余白なし
+.l-section--none {
+    padding-block: 0;
+}
+
+//フル幅背景
+.l-section--full {
+    padding-inline: 0;
+}
+
+//ヒーロー用
+.l-section--hero {
+    padding: 0;
+}
+
+
+// ------------------------------
+// ◆ コンパクトレイアウト
+// ------------------------------
+
+//少し狭め
+.l-section--compact {
+    padding-block: fluid(40, 64);
+}
+
+//やや狭め
+.l-section--narrow {
+    padding-block: fluid(48, 80);
+}
+
+
+// ------------------------------
+// ◆ 背景カラー
+// ------------------------------
+
+.l-section--bg-light {
+    background: var(--color-bg-light);
+}
+
+.l-section--bg-dark {
+    background: var(--color-bg-dark);
+    color: var(--color-text-inverse);
+}
+
+.l-section--bg-main {
+    background: var(--main-color);
+    color: #fff;
+}
+
+
+// ------------------------------
+// ◆ 区切り線
+// ------------------------------
+
+.l-section--border-top {
+    border-top: 1px solid var(--color-border);
+}
+
+.l-section--border-bottom {
+    border-bottom: 1px solid var(--color-border);
+}

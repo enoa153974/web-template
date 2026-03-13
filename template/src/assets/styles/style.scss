@@ -1,3 +1,6 @@
+
+@use "./foundation/variables-custom";
+
 /* -------------------------------
  *  file import (base)
  * ---------------------------- */
@@ -7,67 +10,86 @@
 @use 'base/reset';
 
 /* -------------------------------
- *  file import (foundation)
- * ---------------------------- */
-/* faundation内のファイルをまとめてインポート */
-@use 'foundation/import' as *;
-
-/* -------------------------------
  *  file import (layout)
  * ---------------------------- */
-/* レイアウト（構造用のクラス） */
-@use 'layout/module';
+@use 'layout/main';
+@use "layout/layout-section";
+@use "layout/container";
+@use "layout/stack";
+@use "layout/cluster";
+@use "layout/center";
+@use "layout/switcher";
 
 /* -------------------------------
  *  file import (components/common)
  * ---------------------------- */
 @use 'components/common/header';
 @use 'components/common/footer';
+@use 'components/common/image-wrapper';
+@use 'components/common/section-title';
+@use 'components/common/grid';
+
 /* -------------------------------
  *  file import (components/section)
  * ---------------------------- */
+@use 'components/sections/hero';
+@use 'components/sections/section-block';
 /* -------------------------------
  *  file import (components/ui)
  * ---------------------------- */
-/* ハンバーガーメニューcss */
-@use 'components/ui/hamburger';
-/* アコーディオンメニューcss/デザイン-base */
-<<<<<<< HEAD
+/* card */
+@use 'components/ui/card';
+/* feature */
+@use 'components/ui/feature-grid';
+/* feature-media */
+@use 'components/ui/feature-media';
+/* cta */
+@use 'components/ui/cta';
+/* button */
+@use 'components/ui/button';
+/* アコーディオン */
 @use 'components/ui/accordion';
-/* アコーディオンメニューcss/デザイン-caregory */
-@use 'components/ui/accordion-category';
-/* スライダー（カルーセル）css */
-@use 'components/ui/slider-arrow';
-/* スライダー（カルーセル）css */
-@use 'components/ui/gallery-slider';
-/* タブメニューcss */
-@use 'components/ui/tab-menu';
-=======
-/* @use 'components/ui/accordion'; */
-/* スライダー（カルーセル）css */
-@use 'components/ui/gallery-slider';
->>>>>>> 10ccc1df7cecc51ed392b98b350339abb233fbfd
+/* faq */
+@use 'components/ui/faq';
+/* tabs */
+@use 'components/ui/tabs';
 /* パンくずリストのcss */
 @use 'components/ui/breadcrumb';
+/* price-table */
+@use 'components/ui/price-table';
+/* price-plan */
+@use 'components/ui/price-plan';
+
+/* スライダー（カルーセル */
+@use 'components/ui/slider';
+
+/* pagenation*/
+@use 'components/ui/pagination';
+/* logo-list*/
+@use 'components/ui/logo-list';
+/* form */
+@use 'components/ui/form';
+/* スライダー（カルーセル）css */
+// @use 'components/ui/gallery-slider';
+/* タブメニューcss */
+// @use 'components/ui/tab-menu';
+/* パンくずリストのcss */
+// @use 'components/ui/breadcrumb';
+
+/* -------------------------------
+ *  file import (foundation)
+ * ---------------------------- */
+/* media */
+@use 'foundation/media';
+
 
 /* -------------------------------
  *  file import (utility)
  * ---------------------------- */
-/* ユーティリティクラス */
-@use 'utility/utilities';
-/* ボタンのベースデザイン */
-@use 'utility/button';
-/* ボタンの上書きデザイン */
-@use 'utility/button-overrides';
-/* marginクラス */
-@use 'utility/margin';
-/* paddingクラス */
-@use 'utility/padding';
-/* 装飾用クラス */
-<<<<<<< HEAD
-@use 'utility/decoration';
-=======
-@use 'utility/decoration';
-/* カラークラス */
-@use 'utility/color';
->>>>>>> 10ccc1df7cecc51ed392b98b350339abb233fbfd
+@use 'utility/aspect-ratio';
+@use 'utility/display';
+@use 'utility/link-cover';
+@use 'utility/overflow';
+@use 'utility/responsive';
+@use 'utility/text';
+@use 'utility/visually-hidden';

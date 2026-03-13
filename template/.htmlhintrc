@@ -1,3 +1,8 @@
 {
-    "spec-char-escape": false
+    "tag-pair": true,
+    "attr-no-duplication": true,
+    "attr-value-double-quotes": true,
+    "id-unique": true,
+    "img-alt-require": true,
+    "doctype-first":false
 }

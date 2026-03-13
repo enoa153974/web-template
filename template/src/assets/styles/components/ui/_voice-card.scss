@@ -1,0 +1,16 @@
+// ------------------------------
+// ◆ voice-card
+// ------------------------------
+.voice-card{
+    padding:var(--space-l);
+
+    .voice-card__image{
+        margin-bottom: var(--space-m);
+    }
+
+
+    .voice-card__name{
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-bold);
+    }
+}

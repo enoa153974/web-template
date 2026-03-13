@@ -1,0 +1,210 @@
+@use '@/assets/styles/foundation/import' as *;
+
+/* ==================================================
+Slider
+--------------------------------------------------
+汎用slickスライダー
+
+voice
+works
+logo
+hero
+gallery
+
+すべて共通で使用
+================================================== */
+
+.slider {
+    position: relative;
+    width: 100%;
+}
+
+/* ---------------------------------
+slick 基本
+--------------------------------- */
+
+.slick-slide {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* gifエラー回避 */
+.slick-loading .slick-list {
+    background: none !important;
+}
+
+/* ---------------------------------
+高さ揃え
+--------------------------------- */
+
+.slick-track {
+    display: flex;
+}
+
+.slick-slide {
+    height: auto;
+}
+
+.slick-slide>div {
+    height: 100%;
+}
+
+
+/* card間余白 */
+.slider--gap-s .slick-slide {
+    padding: 0 var(--space-s);
+}
+
+.slider--gap-m .slick-slide {
+    padding: 0 var(--space-m);
+}
+
+.slider--gap-l .slick-slide {
+    padding: 0 var(--space-l);
+}
+
+.slider--gap-xl .slick-slide {
+    padding: 0 var(--space-xl);
+}
+
+.slider--gap-s .slick-list {
+    margin: 0 calc(var(--space-s) * -1);
+}
+
+.slider--gap-m .slick-list {
+    margin: 0 calc(var(--space-m) * -1);
+}
+
+.slider--gap-l .slick-list {
+    margin: 0 calc(var(--space-l) * -1);
+}
+
+.slider--gap-xl .slick-list {
+    margin: 0 calc(var(--space-xl) * -1);
+}
+
+/* ---------------------------------
+Dots
+--------------------------------- */
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: var(--space-s);
+}
+
+.slick-dots li {
+    width: auto;
+    height: auto;
+}
+
+.slick-dots li button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ddd;
+    cursor: pointer;
+
+    font-size: 0;
+    line-height: 0;
+
+    transition: background .2s ease;
+}
+
+/* active */
+
+.slick-dots li.slick-active button {
+    background: var(--accent-color);
+}
+
+/* slickデフォルトの黒丸消す */
+
+.slick-dots li button::before {
+    display: none;
+}
+
+/* ---------------------------------
+Arrow
+--------------------------------- */
+
+.slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: rgba(0, 0, 0, .6);
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: background .2s ease;
+}
+
+.slider__arrow:hover {
+    background: rgba(0, 0, 0, .8);
+}
+
+/* 左右配置 */
+
+.slider__arrow--prev {
+    left: .5rem;
+}
+
+.slider__arrow--next {
+    right: .5rem;
+}
+
+/* 矢印 */
+
+.slider__arrow span {
+    display: block;
+
+    width: 10px;
+    height: 10px;
+
+    margin: auto;
+
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.slider__arrow--prev span {
+    transform: rotate(-135deg);
+}
+
+.slider__arrow--next span {
+    transform: rotate(45deg);
+}
+
+/* slickデフォルト矢印消す */
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+/* ---------------------------------
+Responsive
+--------------------------------- */
+
+@include media-query(md) {
+
+    .slider__arrow {
+        display: none;
+    }
+
+}

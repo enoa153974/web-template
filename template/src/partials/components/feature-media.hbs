@@ -1,0 +1,73 @@
+
+{{!-- 
+
+<section class="features section">
+
+    <div class="container">
+
+        {{> feature-media
+            image="/img/feature1.jpg"
+            alt="機能1"
+            label="FEATURE 01"
+            title="高速処理"
+            text="最新技術で高速な処理を実現。"
+        }}
+
+        {{> feature-media
+            image="/img/feature2.jpg"
+            alt="機能2"
+            label="FEATURE 02"
+            title="クラウド対応"
+            text="どこからでもアクセス可能。"
+        }}
+
+        {{> feature-media
+            image="/img/feature3.jpg"
+            alt="機能3"
+            label="FEATURE 03"
+            title="セキュア"
+            text="安全なデータ管理を実現。"
+        }}
+
+    </div>
+
+</section>
+
+--}}
+<div class="feature-media media">
+
+    <div class="media__image">
+        <img src="{{image}}" alt="{{alt}}">
+    </div>
+
+    <div class="media__body">
+
+        {{#if label}}
+        <p class="feature-media__label">
+            {{label}}
+        </p>
+        {{/if}}
+
+        {{#if title}}
+        <h3 class="feature-media__title">
+            {{title}}
+        </h3>
+        {{/if}}
+
+        {{#if text}}
+        <p class="feature-media__text">
+            {{text}}
+        </p>
+        {{/if}}
+
+        {{#if button}}
+        <div class="feature-media__cta">
+            <a href="{{buttonLink}}" class="button button--primary">
+                {{button}}
+            </a>
+        </div>
+        {{/if}}
+
+    </div>
+
+</div>

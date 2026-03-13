@@ -1,10 +1,16 @@
 
+/* -------------------------------
+ * container-size
+ * ---------------------------- */
 $container-max-width: 1200px !default;
 $container-sub-max-width: 960px !default;
+$space-container: 2rem !default;
 $base-gap-size: 2rem !default;
 
+
+
 /* -------------------------------
- *  screen size & breakpoint
+ * screen size & breakpoint
  * ---------------------------- */
 $screen-2xl: 1440 !default;
 $screen-xl: 1280 !default;
@@ -14,29 +20,80 @@ $screen-sm: 544 !default;
 $screen-xs: 480 !default;
 $screen-2xs: 360 !default;
 $breakpoint-list: (
-    switch: #{$screen-md},
-    2xs: #{$screen-2xs},
-    xs: #{$screen-xs},
-    sm: #{$screen-sm},
-    md: #{$screen-md},
-    lg: #{$screen-lg},
-    xl: #{$screen-xl},
-    2xl: #{$screen-2xl}) !default;
+    2xs: $screen-2xs,
+    xs: $screen-xs,
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg,
+    xl: $screen-xl,
+    2xl: $screen-2xl) !default;
+
 
 /* -------------------------------
- *  space size
+ * layout heights
  * ---------------------------- */
-$space-6XL: 240px !default;
-$space-5XL: 200px !default;
-$space-4XL: 160px !default;
-$space-3XL: 128px !default;
-$space-2XL: 96px !default;
-$space-XL: 64px !default;
-$space-L: 48px !default;
-$space-M: 32px !default;
-$space-R: 24px !default;
-$space-S: 16px !default;
-$space-XS: 12px !default;
-$space-2XS: 8px !default;
-$space-3XS: 4px !default;
-$space-4XS: 2px !default;
+$header-height: 140px !default;
+$footer-height: 120px !default;
+$sp-header-height: 63px !default;
+$sp-footer-height: 150px !default;
+
+/* -------------------------------
+ * space size
+ * ---------------------------- */
+$space-6xl: 240px !default;
+$space-5xl: 200px !default;
+$space-4xl: 160px !default;
+$space-3xl: 128px !default;
+$space-2xl: 96px !default;
+$space-xl: 64px !default;
+$space-l: 48px !default;
+$space-m: 32px !default;
+$space-r: 24px !default;
+$space-s: 16px !default;
+$space-xs: 12px !default;
+$space-2xs: 8px !default;
+$space-3xs: 4px !default;
+$space-4xs: 2px !default;
+
+/* -------------------------------
+ * section space
+ * ---------------------------- */
+$space-section: $space-l !default;
+$space-section-sm: $space-s !default;
+$space-section-lg: $space-xl !default;
+/* -------------------------------
+ * Layout(swither)
+ * ---------------------------- */
+$layout-switch-threshold: 600px!default;
+/* -------------------------------
+ * radius
+ * ---------------------------- */
+$radius-sm: 4px !default;
+$radius: 10px !default;
+$radius-md: 12px !default;
+$radius-lg: 16px !default;
+$radius-xl: 24px !default;
+
+/* -------------------------------
+ * theme color
+ * ---------------------------- */
+$main-color: #2e499d !default;
+$sub-color: #d13209 !default;
+$accent-color: #ffde00 !default;
+$bg-color: #f2ede1 !default;
+$text-color: #333 !default;
+$text-color-sub: #fff !default;
+
+/* -------------------------------
+ * font family
+ * ---------------------------- */
+$font-jp: 'Noto Sans JP', serif !default;
+$font-en: 'Pacifico', cursive !default;
+$font-copy: 'Klee One', serif !default;
+
+
+/* -------------------------------
+ * 可変フォント用の最小幅と最大幅
+ * ---------------------------- */
+$fluid-min-width: 768 !default;
+$fluid-max-width: 1440 !default;

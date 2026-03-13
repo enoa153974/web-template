@@ -1,0 +1,35 @@
+{{!--
+◆使い方
+{{>components/voice-section }}
+
+--}}
+
+<section class="voice section">
+
+    <div class="container">
+
+        {{> ui/section-title
+        title="お客様の声"
+        subtitle="VOICE"
+        modifier="section-title--center"
+        }}
+
+        <div class="voice__slider slider" data-slides="3" data-scroll="1" data-autoplay="false" data-speed="4000"
+            data-dots="true" data-arrows="true" data-center="false" data-fade="false" data-loop="true" data-gap="s">
+
+            {{#each voices.voices}}
+
+            {{> components/voice-card
+            image=image
+            name=name
+            meta=meta
+            text=text
+            }}
+
+            {{/each}}
+
+        </div>
+
+    </div>
+
+</section>

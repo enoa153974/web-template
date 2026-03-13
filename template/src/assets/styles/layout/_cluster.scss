@@ -1,0 +1,90 @@
+// ==================================================
+// ■ Cluster Layout
+// 横並び要素のレイアウト管理クラス
+//
+// 主に以下の用途で使用する：
+// ・ナビゲーション
+// ・ボタン群
+// ・タグ / バッジ
+// ・アイコン＋テキスト
+//
+// flex + gap を使って、要素間の間隔を統一する。
+// 要素が増えた場合は自動で折り返す。
+// ==================================================
+
+
+/* ---------------------------------
+ * base
+ * ---------------------------------
+ * 使用例：
+ * <div class="l-cluster">
+ *   <button>保存</button>
+ *   <button>キャンセル</button>
+ * </div>
+ */
+
+.l-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--base-gap-size);
+    align-items: center;
+}
+
+
+/* ---------------------------------
+ * size modifier
+ * ---------------------------------
+ * 要素間の余白を調整する
+ */
+
+// 小さめ
+// <div class="l-cluster l-cluster--sm">
+.l-cluster--sm {
+    gap: var(--space-s);
+}
+
+// 大きめ
+// <div class="l-cluster l-cluster--lg">
+.l-cluster--lg {
+    gap: var(--space-l);
+}
+
+
+/* ---------------------------------
+ * alignment modifier
+ * ---------------------------------
+ * 要素の配置を変更する
+ */
+
+// 中央寄せ
+// <div class="l-cluster l-cluster--center">
+.l-cluster--center {
+    justify-content: center;
+}
+
+// 右寄せ
+// <div class="l-cluster l-cluster--right">
+.l-cluster--right {
+    justify-content: flex-end;
+}
+
+// 両端配置
+// <div class="l-cluster l-cluster--between">
+.l-cluster--between {
+    justify-content: space-between;
+}
+
+
+/* ---------------------------------
+ * vertical alignment
+ * ---------------------------------
+ * 縦方向の揃え方
+ */
+
+.l-cluster--start {
+    align-items: flex-start;
+}
+
+.l-cluster--end {
+    align-items: flex-end;
+}

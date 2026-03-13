@@ -1,0 +1,59 @@
+/* ==================================================
+FAQ
+--------------------------------------------------
+よくある質問コンポーネント
+
+用途
+・LP
+・サービスページ
+・コーポレート
+================================================== */
+
+.faq {
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.faq__question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-m);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+}
+
+.faq__q::before{
+    content: "Q：";
+}
+
+.faq__icon {
+    margin-left: var(--space-s);
+}
+
+.faq__arrow {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+    display: block;
+}
+
+.faq__body {
+    padding: var(--space-m);
+}
+
+.faq__text {
+    line-height: 1.7;
+}
+
+.faq__text::before{
+    content: "A：";
+}
+
+.accordion.open .faq__arrow {
+    transform: rotate(180deg);
+}

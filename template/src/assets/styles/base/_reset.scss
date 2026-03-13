@@ -1,4 +1,5 @@
 /* reset.css */
+
 *,
 *::before,
 *::after {
@@ -13,10 +14,22 @@ body {
     font-size: 1rem;
 }
 
+body {
+    line-height: 1.5;
+}
+
 img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+picture {
+    display: block;
+}
+
+svg {
+    display: block;
 }
 
 ul,
@@ -33,4 +46,16 @@ button {
     cursor: pointer;
     background: none;
     border: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }

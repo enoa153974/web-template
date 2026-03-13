@@ -1,0 +1,23 @@
+{{!-- 
+
+{{> section-title
+    title="選ばれる理由"
+    subtitle="FEATURE"
+    modifier="section-title--center"
+}}
+
+--}}
+
+<div class="section-title {{modifier}}">
+
+    {{#if subtitle}}
+    <p class="section-title__subtitle">
+        {{subtitle}}
+    </p>
+    {{/if}}
+
+    <h2 class="section-title__title">
+        {{title}}
+    </h2>
+
+</div>

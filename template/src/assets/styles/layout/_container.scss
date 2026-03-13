@@ -1,0 +1,40 @@
+// ==================================================
+// ■ コンテナ
+// ページの最大幅を制御
+// class="設定したいmodifierつきクラス"を渡すことで、
+// セクションごとにレイアウト等変更可能
+// ==================================================
+// コンテナ初期値
+.l-container {
+    width: min(100%, var(--container-max-width));
+    margin-inline: auto;
+    padding-inline: var(--space-container);
+}
+
+// ------------------------------
+// ◆ サイズバリエーション
+// ------------------------------
+
+//狭い（テキストセクションなど）
+.l-container--narrow {
+    max-width: 800px;
+}
+
+//広め（カードレイアウトなど）
+.l-container--wide {
+    max-width: 1400px;
+}
+
+//フル幅
+.l-container--full {
+    max-width: none;
+    padding-inline: 0;
+}
+
+// ------------------------------
+// ◆ テキスト
+// ------------------------------
+// テキスト中央揃えコンテナ
+.l-container--center {
+    text-align: center;
+}

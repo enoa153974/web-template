@@ -1,0 +1,59 @@
+/* ==================================================
+Accordion
+--------------------------------------------------
+汎用アコーディオンUI
+
+■用途
+--------------------------------------------------
+FAQ
+利用規約
+折りたたみメニュー
+サービス説明
+など
+
+■基本HTML構造
+--------------------------------------------------
+
+<div class="accordion">
+
+    <button class="accordion__btn">
+        タイトル
+    </button>
+
+    <div class="accordion__content">
+        コンテンツ
+    </div>
+
+</div>
+
+■JS制御クラス
+--------------------------------------------------
+.accordion.open
+
+================================================== */
+
+.accordion {
+
+    &__btn {
+        width: 100%;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        text-align: left;
+
+        border: none;
+        background: none;
+
+        padding: var(--space-m) 0;
+    }
+
+    &__content {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .35s ease;
+    }
+
+}

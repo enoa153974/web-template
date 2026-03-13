@@ -1,0 +1,146 @@
+@use '@/assets/styles/foundation/import' as *;
+/* ==================================================
+Price Plan
+--------------------------------------------------
+カード型料金プランUI
+
+■用途
+LP / サービスサイト / SaaS
+
+Basic / Standard / Premium などの料金カード
+
+■構造
+--------------------------------------------------
+
+.price-plan
+    └ price-plan__list
+        └ price-plan__card
+            ├ price-plan__badge
+            ├ price-plan__name
+            ├ price-plan__price
+            ├ price-plan__description
+            ├ price-plan__features
+            │   └ price-plan__feature
+            └ price-plan__cta
+
+================================================== */
+
+.price-plan {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.price-plan__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-fluid-lg);
+
+    @include media-query(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+カード
+================================ */
+
+.price-plan__card {
+    position: relative;
+    padding: var(--space-fluid-lg);
+    border-radius: var(--radius);
+    border: 1px solid #eee;
+    background: #fff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ================================
+おすすめプラン
+================================ */
+
+.price-plan__card--featured {
+    border: 2px solid var(--main-color);
+    transform: scale(1.03);
+}
+
+/* ================================
+バッジ
+================================ */
+
+.price-plan__badge {
+    position: absolute;
+    top: -10px;
+    background: var(--main-color);
+    color: #fff;
+    font-size: var(--font-size-xs);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+}
+
+/* ================================
+プラン名
+================================ */
+
+.price-plan__name {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ================================
+価格
+================================ */
+
+.price-plan__price {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin: var(--space-fluid-sm) 0;
+}
+
+/* ================================
+説明
+================================ */
+
+.price-plan__description {
+    font-size: var(--font-size-sm);
+    color: #666;
+}
+
+/* ================================
+機能リスト
+================================ */
+
+.price-plan__features {
+    width: 100%;
+    text-align: left;
+    margin: var(--space-fluid-base) 0;
+}
+
+.price-plan__feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+    font-size: var(--font-size-sm);
+    gap: .75rem;
+}
+
+.icon--dash::before{
+    font-size: var(--font-size-2xl);
+    margin-right: 3px;
+}
+
+.icon--check::before{
+    font-size: var(--font-size-2xl);
+}
+
+/* ================================
+CTA
+================================ */
+
+.price-plan__cta {
+    margin-top: auto;
+}
+

@@ -1,0 +1,70 @@
+{
+    "plans": [
+        {
+            "name": "Basic",
+            "price": "¥3,000",
+            "description": "個人向けプラン",
+            "ctaText": "申し込む",
+            "ctaLink": "#",
+            "features": [
+                {
+                    "label": "初期設定",
+                    "icon": "icon--check"
+                },
+                {
+                    "label": "メールサポート",
+                    "icon": "icon--check"
+                },
+                {
+                    "label": "電話サポート",
+                    "icon": "icon--dash"
+                }
+            ]
+        },
+        {
+            "name": "Standard",
+            "price": "¥8,000",
+            "description": "一番人気プラン",
+            "badge": "人気",
+            "featured": true,
+            "ctaText": "申し込む",
+            "ctaLink": "#",
+            "features": [
+                {
+                    "label": "初期設定",
+                    "icon": "icon--check"
+                },
+                {
+                    "label": "チャットサポート",
+                    "icon": "icon--check"
+                },
+                {
+                    "label": "電話サポート",
+                    "icon": "icon--check"
+                }
+            ]
+        },
+        {
+            "name": "premium",
+            "price": "¥12,000",
+            "description": "法人向けプラン",
+            "featured": false,
+            "ctaText": "申し込む",
+            "ctaLink": "#",
+            "features": [
+                {
+                    "label": "初期設定",
+                    "icon": "icon--check"
+                },
+                {
+                    "label": "チャットサポート",
+                    "icon": "icon--check"
+                },
+                {
+                    "label": "電話サポート",
+                    "icon": "icon--check"
+                }
+            ]
+        }
+    ]
+}

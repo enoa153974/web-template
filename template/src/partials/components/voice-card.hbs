@@ -1,0 +1,33 @@
+<article class="c-card c-card--voice">
+
+    {{#if image}}
+    <div class="c-card__media">
+        <div class="image-wrapper image-wrapper--circle">
+            <img src="{{image}}" alt="{{name}}">
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="c-card__body l-stack l-stack--sm">
+
+        {{#if text}}
+        <p class="c-card__text">
+            {{text}}
+        </p>
+        {{/if}}
+
+        {{#if name}}
+        <p class="c-card__name">
+            {{name}}
+        </p>
+        {{/if}}
+
+        {{#if meta}}
+        <p class="c-card__meta">
+            {{meta}}
+        </p>
+        {{/if}}
+
+    </div>
+
+</article>

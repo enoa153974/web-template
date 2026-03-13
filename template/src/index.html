@@ -2,37 +2,240 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="ここにページの説明文を記述します。" />
-  <meta name="keywords" content="キーワード1, キーワード2, キーワード3" />
-  <meta name="author" content="あなたの名前や会社名" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="ここにページの説明文を記述します。" />
+    <meta name="keywords" content="キーワード1, キーワード2, キーワード3" />
+    <meta name="author" content="あなたの名前や会社名" />
 
-  <!-- SNS対策（OGP） -->
-  <meta property="og:title" content="ページのタイトル" />
-  <meta property="og:description" content="SNSに表示される説明文" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="https://example.com/ogp-image.jpg" />
+    <!-- SNS対策（OGP） -->
+    <meta property="og:title" content="ページのタイトル" />
+    <meta property="og:description" content="SNSに表示される説明文" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/ogp-image.jpg" />
 
-  <!-- Twitterカード -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ページのタイトル" />
-  <meta name="twitter:description" content="Twitter用の説明文" />
-  <meta name="twitter:image" content="https://example.com/twitter-image.jpg" />
+    <!-- Twitterカード -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ページのタイトル" />
+    <meta name="twitter:description" content="Twitter用の説明文" />
+    <meta name="twitter:image" content="https://example.com/twitter-image.jpg" />
 
-  <title>サンプルページ</title>
-  <link rel="icon" href="/favicon.ico" />
+    <title>サンプルページ</title>
+    <link rel="icon" href="/favicon.ico" />
 </head>
 
-<body>
-  {{> header }}
-  <main>
+<body class="page-home">
+    {{> layout/header
+    isTop=true
+    logo="/assets/image/logo.png"
+    siteName="Sample Inc"
+    nav=navData
+    cta=ctaData
+    }}
 
-  </main>
-  {{> footer}}
-  <script type="module" src="./main.js"></script>
+    <main class="l-main">
+        <section class="l-section l-section--hero">
+            <div class="l-container">
+                {{> sections/hero }}
+            </div>
+        </section>
+
+        <section class="l-section">
+            <div class="l-container">
+                {{> layout/section
+                id="service"
+                eyebrow="service"
+                title="サービス"
+                lead="私たちのサービス一覧"
+                body='
+                <div class="c-service-list">
+                    サービス内容
+                </div>
+                '
+                }}
+            </div>
+        </section>
+
+        <section class="l-section">
+            <div class="l-container">
+                <!-- faq -->
+                {{> components/faq
+                question="○○はなんでですか？"
+                answer="●●は××です"
+                }}
+                {{> components/faq
+                question="○○はなんでですか？"
+                answer="●●は××です"
+                }}
+            </div>
+        </section>
+
+        <section class="l-section">
+            <div class="">
+                {{> components/cta/cta
+                title="まずは無料相談"
+                text="お気軽にお問い合わせください"
+                primaryText="無料相談"
+                primaryUrl="/contact"
+                secondaryText="資料請求"
+                secondaryUrl="/download"
+                modifier="cta--hero-banner cta--center"
+                }}
+            </div>
+        </section>
+
+        <section class="l-section">
+            <div class="l-container">
+                <div class="grid grid--2">
+
+                    <div>
+
+                        {{> ui/card
+                        image="/images/sample_img.jpg"
+                        alt=""
+                        title="車両ラインナップ"
+                        text="テキストテキストテキスト"
+                        url="https://www.rakuyo-taxi.co.jp/"
+                        modifier="c-card--flex c-card--hover"
+                        imageWrapperClass="image-wrapper--circle"
+                        }}
+                    </div>
+                    <div>
+
+                        {{> ui/card
+                        image="/images/sample_img.jpg"
+                        alt=""
+                        title="モデルコース・料金一覧"
+                        text="説明文"
+                        url="/service/"
+                        modifier="c-card--flex"
+                        imageWrapperClass="image-wrapper--circle"
+                        }}
+                    </div>
+                    <div>
+
+                        {{> ui/card
+                        image="/images/sample_img.jpg"
+                        alt=""
+                        title="マイカー＆観光タクシー"
+                        text="説明文"
+                        url="/service/"
+                        modifier="c-card--flex c-card--flex-reverse "
+                        imageWrapperClass="image-wrapper--circle"
+                        }}
+                    </div>
+                    <div>
+
+                        {{> ui/card
+                        image="/images/sample_img.jpg"
+                        alt=""
+                        title="採用ページ"
+                        text="説明文"
+                        url="/service/"
+                        modifier="c-card--flex c-card--flex-reverse "
+                        imageWrapperClass="image-wrapper--circle"
+                        }}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="l-section">
+            <div class="l-container">
+                {{> components/price-plan plans=pricePlans}}
+            </div>
+        </section>
+
+        <section class="l-section l-section--cta">
+            <div class="l-container">
+                {{>components/voice-section }}
+
+            </div>
+        </section>
+        <section class="section">
+
+            <div class="l-container">
+                {{#> components/form/form}}
+
+                {{#> components/form/form-group
+                label="お名前"
+                id="name"
+                required=true
+                }}
+
+                <input type="text" id="name" name="name" autocomplete="name" required class="c-form__control" />
+
+                {{/components/form/form-group}}
+
+                {{#> components/form/form-group
+                label="メールアドレス"
+                id="email"
+                required=true
+                }}
+
+                <input type="email" id="email" name="email" autocomplete="name" required class="c-form__control" />
+
+                {{/components/form/form-group}}
+
+                {{#> components/form/form-group
+                label="お問い合わせ内容"
+                id="message"
+                }}
+
+                <textarea id="message" class="c-form__control"></textarea>
+
+                {{/components/form/form-group}}
+
+
+                {{#> components/form/form-group
+                label="お問い合わせ種別"
+                id="type"
+                }}
+
+                <select id="type" class="c-form__control">
+                    <option>選択してください</option>
+                    <option>資料請求</option>
+                    <option>見積依頼</option>
+                    <option>資料請求</option>
+                    <option>見積依頼</option>
+                </select>
+
+                {{/components/form/form-group}}
+
+                {{/components/form/form}}
+            </div>
+        </section>
+
+
+        <section class="l-section">
+            <div class="">
+                {{> components/cta/cta
+                title="まずは無料相談"
+                text="お気軽にお問い合わせください"
+                primaryText="無料相談"
+                primaryUrl="/contact"
+                secondaryText="資料請求"
+                secondaryUrl="/download"
+                modifier="cta--hero-banner cta--center"
+                }}
+            </div>
+        </section>
+
+    </main>
+
+
+
+    {{> layout/footer
+    logo="/assets/image/logo.png"
+    siteName="Sample Inc"
+    description="企業説明テキストが入ります"
+    nav=navData
+    year="2026"
+    }}
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>

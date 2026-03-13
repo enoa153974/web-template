@@ -1,15 +1,52 @@
+@use '@/assets/styles/foundation/import' as *;
+
 .footer {
+    padding: 60px 20px;
+    background: #111;
+    color: var(--text-color-sub);
+}
+
+.footer__inner {
     height: var(--footer-height);
+    max-width: var(--container-sub-max-width);
+    margin: 0 auto;
 
-    &__inner {
-        height: 100%;
-
-        .footer__copyright{
-            font-size: 0.75rem;
-        }
-            }
-
-    @media (max-width: 47.9375rem) {
+    @include media-query(md){
         height: var(--sp-footer-height);
+    }
+}
+
+.footer__brand {
+    margin-bottom: 30px;
+}
+
+.footer__logo {
+    height: 40px;
+
+}
+
+.footer__description {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.footer__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.footer__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer__bottom {
+    border-top: 1px solid #999;
+    padding-top: 20px;
+    font-size: 13px;
+    .footer__copyright{
+        @include flex-center;
     }
 }

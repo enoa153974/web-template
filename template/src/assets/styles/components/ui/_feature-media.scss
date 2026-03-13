@@ -1,0 +1,38 @@
+/* ==================================================
+Feature Media
+--------------------------------------------------
+画像とテキストを横並びにしたFeature UI。
+foundationの media レイアウトを利用する。
+
+用途
+--------------------------------------------------
+・サービス紹介
+・機能説明
+・プロダクト説明
+・LPの特徴セクション
+================================================== */
+
+.feature-media {
+    align-items: center;
+}
+
+.feature-media__label {
+    margin-bottom: var(--space-xs);
+    font-size: .875rem;
+    color: var(--sub-color);
+}
+
+.feature-media__title {
+    margin-bottom: var(--space-s);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.feature-media__text {
+    line-height: 1.7;
+    margin-bottom: var(--space-m);
+}
+
+.feature-media__cta {
+    margin-top: var(--space-m);
+}

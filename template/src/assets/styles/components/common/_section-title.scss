@@ -1,0 +1,112 @@
+@use '@/assets/styles/foundation/import' as *;
+
+.section-title {
+
+    margin-bottom: var(--space-l);
+
+    &__subtitle {
+
+        font-size: var(--font-size-lg);
+        color: var(--sub-color);
+        margin-bottom: var(--space-xs);
+        letter-spacing: .1em;
+        font-weight: 600;
+
+    }
+
+    &__title {
+        font-size: var(--font-size-2xl);
+        font-weight: 700;
+        line-height: 1.4;
+
+    }
+
+}
+
+/* ===============================
+center
+================================ */
+
+.section-title--center {
+    text-align: center;
+}
+
+/* ===============================
+line
+================================ */
+
+.section-title--line {
+
+    .section-title__title {
+
+        position: relative;
+        padding-bottom: var(--space-xs);
+        display: inline-block;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--sub-color);
+        }
+
+    }
+
+}
+
+/* ===============================
+left-line
+================================ */
+
+.section-title--left-line {
+
+    .section-title__title {
+        display: inline-block;
+        position: relative;
+        padding-left: var(--space-s);
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 80%;
+            background: var(--sub-color);
+        }
+
+    }
+
+}
+
+/* ===============================
+large
+================================ */
+
+.section-title--large {
+
+    .section-title__title {
+        font-size: var(--font-size-4xl);
+    }
+
+}
+
+/* ===============================
+white
+================================ */
+
+.section-title--white {
+
+    .section-title__subtitle {
+        color: #fff;
+    }
+
+    .section-title__title {
+        color: #fff;
+    }
+
+}

@@ -1,28 +1,93 @@
+/* ==================================================
+Breadcrumb
+--------------------------------------------------
+パンくずリストUI
+
+■用途
+--------------------------------------------------
+現在のページ階層を表示するナビゲーション。
+
+例
+TOP ＞ サービス ＞ LP制作
+
+■設計方針
+--------------------------------------------------
+・Handlebars化しない
+・ページごとに内容が異なるため
+・HTMLは各ページに直接記述する
+
+■アクセシビリティ
+--------------------------------------------------
+nav に aria-label="Breadcrumb" を付与
+現在ページには aria-current="page"
+
+■HTML使用例
+--------------------------------------------------
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+
+    <ol class="breadcrumb__list">
+
+        <li class="breadcrumb__item">
+        <a href="/" class="breadcrumb__link">TOP</a>
+        </li>
+
+        <li class="breadcrumb__item">
+        <a href="/service" class="breadcrumb__link">サービス</a>
+        </li>
+
+        <li class="breadcrumb__item">
+        <span class="breadcrumb__current" aria-current="page">
+            LP制作
+        </span>
+        </li>
+
+    </ol>
+
+</nav>
+
+■構造
+--------------------------------------------------
+
+.breadcrumb
+    └ breadcrumb__list
+        └ breadcrumb__item
+        ├ breadcrumb__link
+        └ breadcrumb__current
+
+================================================== */
+
 .breadcrumb {
-    font-size: 12px;
-    color: #333;
-    font-weight: 500;
+    font-size: var(--font-size-xs);
+    color: var(--text-color);
 }
 
-.breadcrumb ol {
+/* リスト */
+
+.breadcrumb__list {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.breadcrumb li + li::before {
-    content: '＞';
-    margin: 0 0.5em;
+/* アイテム */
+
+.breadcrumb__item+.breadcrumb__item::before {
+    content: "＞";
+    margin: 0 .5em;
     color: #666;
 }
 
-.breadcrumb a {
+/* リンク */
+
+.breadcrumb__link {
     color: #333;
     text-decoration: none;
-    font-weight: normal;
 }
 
-.breadcrumb [aria-current='page'] {
+/* 現在ページ */
+
+.breadcrumb__current {
     font-weight: bold;
 }

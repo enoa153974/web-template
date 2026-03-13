@@ -1,0 +1,43 @@
+/* ==================================================
+Feature
+--------------------------------------------------
+サービスの特徴やメリットを表示するUIコンポーネント。
+
+■用途
+--------------------------------------------------
+・サービスの特徴
+・メリット
+・機能紹介
+・強み
+
+■基本構造
+--------------------------------------------------
+
+.feature
+    ├ feature__image
+    ├ feature__title
+    └ feature__text
+
+================================================== */
+
+.feature {
+    text-align: center;
+}
+
+.feature__image {
+    margin-bottom: var(--space-s);
+}
+
+.feature__image img {
+    display: block;
+    margin-inline: auto;
+}
+
+.feature__title {
+    margin-bottom: var(--space-xs);
+    font-weight: bold;
+}
+
+.feature__text {
+    line-height: 1.6;
+}

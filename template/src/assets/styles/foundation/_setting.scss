@@ -1,0 +1,68 @@
+@forward 'variables' with ( // ==================================================
+    // ■ 変数設定ファイル
+    // ==================================================
+    // NOTE: 案件ごとの値の上書きは以下に書くことで
+    // variables.scssに定義された変数を書き換えることができる
+
+    // ------------------------------
+    // ◆ コンテナ幅・余白
+    // ------------------------------
+
+    $container-max-width: 1200px,
+    $container-sub-max-width: 980px,
+    $space-container: 3rem,
+    $base-gap-size: 2rem,
+
+    // ------------------------------
+    // ◆header,footerの高さ
+    // ------------------------------
+
+    $header-height: 100px,
+    $footer-height: 200px,
+    $sp-header-height: 120px,
+    $sp-footer-height: 200px,
+
+    // ------------------------------
+    // ◆ブレイクポイント
+    // ------------------------------
+    //（例）$screen-md: 800,
+
+
+    // ------------------------------
+    // ◆ radius(丸み)
+    // ------------------------------
+    //$radius-sm: 4px ,
+    //$radius: 10px ,
+    //$radius-md: 12px ,
+    //$radius-lg: 16px ,
+    //$radius-xl: 24px ,
+
+
+    // ------------------------------
+    // ◆ テーマカラー・フォントカラー
+    // ------------------------------
+    //$main-color: #2e499d ,
+    //$sub-color: #d13209 ,
+    //$accent-color: #ffde00 ,
+
+    //$bg-color: #f2ede1 ,
+
+    //$text-color: #333 ,
+    //$text-color-sub: #fff ,
+
+    // ------------------------------
+    // ◆ フォント
+    // ------------------------------
+    //$font-jp: ('Zen Kaku Gothic New', sans-serif),
+    //$font-en: ('Zen Kaku Gothic New', sans-serif),
+    //$font-copy: ('Playfair Display', serif)
+
+
+    // ------------------------------
+    // ◆ 可変フォント用の最小幅と最大幅
+    // ------------------------------
+    //$fluid-min-width: 768 ,
+    //$fluid-max-width: 1440 .
+
+
+)

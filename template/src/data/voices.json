@@ -1,0 +1,40 @@
+{
+    "voices": [
+        {
+            "image": "/images/sample_img.jpg",
+            "name": "山田 太郎",
+            "meta": "東京都 / 30代",
+            "text": "とても使いやすくて助かりました。"
+        },
+        {
+            "image": "/images/sample_img.jpg",
+            "name": "佐藤 花子",
+            "meta": "大阪府 / 40代",
+            "text": "サポートも丁寧でした。"
+        },
+        {
+            "image": "/images/sample_img.jpg",
+            "name": "平井 ゆうか",
+            "meta": "東京都 / 50代",
+            "text": "親切な対応でした。"
+        },
+        {
+            "image": "/images/sample_img.jpg",
+            "name": "田中 由美子",
+            "meta": "千葉県 / 40代",
+            "text": "スピーディな納品でした。"
+        },
+                {
+            "image": "/images/sample_img.jpg",
+            "name": "佐藤 花子",
+            "meta": "大阪府 / 40代",
+            "text": "サポートも丁寧でした。"
+        },
+                {
+            "image": "/images/sample_img.jpg",
+            "name": "佐藤 花子",
+            "meta": "大阪府 / 40代",
+            "text": "サポートも丁寧でした。"
+        }
+    ]
+}

@@ -1,0 +1,271 @@
+@use '@/assets/styles/foundation/import' as *;
+
+/* ==================================================
+Component: Form
+--------------------------------------------------
+汎用フォームコンポーネント
+
+使用例
+---------------------------------
+
+<form class="c-form">
+
+    <div class="c-form__group">
+        <label class="c-form__label">
+            お名前
+            <span class="c-form__required">必須</span>
+        </label>
+
+        <input type="text" class="c-form__control">
+    </div>
+
+</form>
+
+================================================== */
+
+.c-form {
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+
+/* ==================================================
+group
+================================================== */
+
+.c-form__group {
+    margin-bottom: var(--space-m);
+}
+
+
+/* ==================================================
+label
+================================================== */
+
+.c-form__label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+
+/* ==================================================
+required
+================================================== */
+
+.c-form__required {
+    margin-left: 6px;
+    font-size: 12px;
+
+    color: #fff;
+    background: #e53935;
+
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+
+/* ==================================================
+control
+================================================== */
+
+.c-form__control {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+
+    font-size: var(--font-size-md);
+
+    transition:
+        border .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* focus */
+
+.c-form__control:focus {
+
+    border-color: var(--main-color);
+
+    outline: none;
+
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .05);
+
+}
+
+
+/* textarea */
+
+textarea.c-form__control {
+
+    min-height: 140px;
+
+    resize: vertical;
+
+}
+
+
+/* select */
+
+select.c-form__control {
+
+    cursor: pointer;
+
+}
+
+
+/* ==================================================
+help text
+================================================== */
+
+.c-form__help {
+
+    margin-top: 6px;
+
+    font-size: var(--font-size-sm);
+
+    color: #777;
+
+}
+
+
+/* ==================================================
+error
+================================================== */
+
+.c-form__error {
+
+    margin-top: 6px;
+
+    font-size: var(--font-size-sm);
+
+    color: #d93025;
+
+}
+
+
+/* ==================================================
+actions
+================================================== */
+
+.c-form__actions {
+
+    margin-top: var(--space-l);
+
+    text-align: center;
+
+}
+
+
+/* ==================================================
+checkbox
+================================================== */
+
+.c-form__checkbox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: var(--font-size-md);
+
+}
+
+
+/* ==================================================
+radio
+================================================== */
+
+.c-form__radio {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+/* ==================================================
+エラー表示
+================================================== */
+
+.c-form__error {
+margin-top: 6px;
+font-size: 0.875rem;
+color: #e5484d;
+}
+
+.c-form__group.is-error {
+
+.c-form__control {
+border-color: #e5484d;
+}
+
+}
+
+
+/* ==================================================
+modifier
+================================================== */
+
+
+/* 横並びフォーム */
+
+.c-form--horizontal {
+
+    .c-form__group {
+
+        display: grid;
+
+        grid-template-columns: 200px 1fr;
+
+        gap: var(--space-s);
+
+        align-items: center;
+
+    }
+
+}
+
+
+/* コンパクトフォーム */
+
+.c-form--compact {
+
+    .c-form__control {
+
+        padding: 8px 10px;
+
+    }
+
+}
+
+
+
+
+/* ==================================================
+Responsive
+================================================== */
+
+@include media-query(md) {
+
+    .c-form--horizontal {
+
+        .c-form__group {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    }
+
+}

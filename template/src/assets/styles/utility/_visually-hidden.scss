@@ -1,0 +1,27 @@
+/* ==================================================
+    Utility: visually hidden
+    --------------------------------------------------
+    視覚的には非表示だが、スクリーンリーダーには
+    読み上げさせたい場合に使用する。
+
+    主な用途
+    ・ロゴのサイト名
+    ・アイコンボタンのラベル
+    ・アクセシブルな補助テキスト
+
+    使用例
+    ---------------------------------
+    <span class="u-visually-hidden">メニュー</span>
+================================================== */
+
+.u-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+}

@@ -1,0 +1,89 @@
+<section class="price-table">
+
+    <table class="price-table__table">
+
+        <thead>
+
+            <tr>
+
+                <th></th>
+
+                {{#each priceTables.plans}}
+
+                <th class="price-table__plan {{#if popular}}price-table__plan--popular{{/if}}">
+
+                    {{#if popular}}
+                    <span class="price-table__badge">おすすめ</span>
+                    {{/if}}
+
+                    <span class="price-table__plan-name">
+                        {{name}}
+                    </span>
+
+                </th>
+
+                {{/each}}
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {{#each priceTables.features}}
+
+            <tr>
+
+                <th class="price-table__feature">
+                    {{label}}
+                </th>
+
+                {{#each values}}
+
+                <td class="price-table__value">
+
+                    {{#if type}}
+
+                    <span class="icon icon--{{type}}"></span>
+
+                    {{else}}
+
+                    {{text}}
+
+                    {{/if}}
+
+                </td>
+
+                {{/each}}
+
+            </tr>
+
+            {{/each}}
+
+            <tr class="price-table__row-price">
+
+                <th></th>
+
+                {{#each priceTables.plans}}
+
+                <td>
+
+                    <span class="price-table__price">
+                        {{price}}
+                    </span>
+
+                    <a href="{{cta.link}}" class="c-button c-button--primary">
+                        {{cta.text}}
+                    </a>
+
+                </td>
+
+                {{/each}}
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>

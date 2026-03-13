@@ -1,0 +1,46 @@
+[
+    {
+        "url": "/",
+        "label": "トップ",
+        "footer": true,
+        "showChildrenInFooter": false
+    },
+    {
+        "url": "/about/",
+        "label": "会社概要",
+        "footer": true,
+        "showChildrenInFooter": true,
+        "children": [
+            {
+                "label": "会社理念",
+                "url": "/service/web"
+            }
+        ]
+    },
+    {
+        "label": "サービス",
+        "url": "/service",
+        "footer": true,
+        "showChildrenInFooter": true,
+        "children": [
+            {
+                "label": "Web制作",
+                "url": "/service/web"
+            },
+            {
+                "label": "SEO",
+                "url": "/service/seo"
+            },
+            {
+                "label": "広告運用",
+                "url": "/service/ad"
+            }
+        ]
+    },
+    {
+        "url": "/contact/",
+        "label": "お問い合わせ",
+        "footer": false,
+        "showChildrenInFooter": false
+    }
+]

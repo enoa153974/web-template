@@ -1,0 +1,67 @@
+{{!--
+
+◆input
+{{#> components/form/form-group
+label="お名前"
+id="name"
+required=true
+}}
+
+<input
+    type="text"
+    id="name"
+    name="name"
+    required
+    class="c-form__control"
+/>
+
+{{/components/form/form-group}}
+
+◆textarea
+{{#> components/form/form-group
+label="お問い合わせ内容"
+id="message"
+}}
+
+<textarea id="message" class="c-form__control"></textarea>
+
+{{/components/form/form-group}}
+
+◆select
+{{#> components/form/form-group
+label="お問い合わせ種別"
+id="type"
+}}
+
+<select id="type" class="c-form__control">
+    <option>選択してください</option>
+    <option>資料請求</option>
+    <option>見積依頼</option>
+</select>
+
+{{/components/form/form-group}}
+
+--}}
+
+<div class="c-form__group">
+
+    {{#if label}}
+    <label class="c-form__label" for="{{id}}">
+        {{label}}
+
+        {{#if required}}
+        <span class="c-form__required">必須</span>
+        {{/if}}
+
+    </label>
+    {{/if}}
+
+    {{> @partial-block}}
+
+    {{#if help}}
+    <p class="c-form__help">{{help}}</p>
+    {{/if}}
+
+    <p class="c-form__error"></p>
+
+</div>

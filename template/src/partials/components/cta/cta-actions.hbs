@@ -1,0 +1,31 @@
+{{!-- 
+◆使い方
+・主にheroセクションで使用
+<div class="c-hero__actions">
+
+    {{> components/cta-actions
+        primaryText="無料相談"
+        primaryUrl="/contact"
+        secondaryText="資料請求"
+        secondaryUrl="/download"
+    }}
+
+</div>
+
+--}}
+
+<div class="cta__action">
+
+    {{#if primaryText}}
+    <a href="{{primaryUrl}}" class="c-button c-button--primary">
+        {{primaryText}}
+    </a>
+    {{/if}}
+
+    {{#if secondaryText}}
+    <a href="{{secondaryUrl}}" class="c-button c-button--outline">
+        {{secondaryText}}
+    </a>
+    {{/if}}
+
+</div>

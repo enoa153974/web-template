@@ -1,0 +1,142 @@
+/* ==================================================
+    Component: Button
+    --------------------------------------------------
+    汎用ボタンコンポーネント
+
+    使用例
+    ---------------------------------
+    ◆基本
+    <a class="c-button">詳しく見る</a>
+
+    ◆primary
+    <a class="c-button c-button--primary">
+        お問い合わせ
+    </a>
+
+    ◆outline
+    <a class="c-button c-button--outline">
+        資料ダウンロード
+    </a>
+
+    ◆矢印つきボタン
+    <a class="c-button c-button--arrow">
+    詳しく見る
+    </a>
+
+    ◆アイコン付きボタン
+    <a class="c-button c-button--icon">
+        <span class="c-button__label">資料ダウンロード</span>
+        <span class="c-button__icon">
+        <img src="/images/icon-download.svg" alt="">
+        </span>
+    </a>
+
+    buttonタグ
+    <button class="c-button">
+        送信
+    </button>
+
+================================================== */
+
+.c-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+
+    border-radius: var(--radius);
+
+    background: #eee;
+    color: #333;
+
+    transition: 0.3s;
+}
+
+.c-button:hover {
+    opacity: .8;
+}
+
+
+/* ------------------------------
+    primary
+------------------------------ */
+
+.c-button--primary {
+    background: var(--main-color);
+    color: #fff;
+}
+
+
+/* ------------------------------
+    outline
+------------------------------ */
+
+.c-button--outline {
+    background: transparent;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+
+
+/* ------------------------------
+    arrow
+-------------------------------------------------- */
+
+.c-button--arrow {
+    position: relative;
+    gap: 8px;
+}
+
+.c-button--arrow::after {
+    content: "→";
+    font-size: 0.9em;
+    transition: transform .3s;
+}
+
+.c-button--arrow:hover::after {
+    transform: translateX(4px);
+}
+
+/* ------------------------------
+    icon
+-------------------------------------------------- */
+
+.c-button--icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* アイコン */
+
+.c-button__icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.c-button__icon img,
+.c-button__icon svg {
+    width: 1em;
+    height: 1em;
+}
+
+
+/* ------------------------------
+    icon position
+------------------------------ */
+
+/* アイコン右 */
+
+.c-button--icon-right {
+    flex-direction: row;
+}
+
+/* アイコン左 */
+
+.c-button--icon-left {
+    flex-direction: row-reverse;
+}

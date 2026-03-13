@@ -1,0 +1,52 @@
+{{!--
+
+◆使用例
+<div class="feature-grid">
+    {{> feature
+        image="/images/icon1.svg"
+        alt="高品質アイコン"
+        title="高品質"
+        text="経験豊富なスタッフが対応"
+    }}
+
+    {{> feature
+        image="/images/icon2.svg"
+        alt="高品質アイコン"
+        title="高品質"
+        text="経験豊富なスタッフが対応"
+    }}
+
+    {{> feature
+        image="/images/icon3.svg"
+        alt="高品質アイコン"
+        title="高品質"
+        text="経験豊富なスタッフが対応"
+    }}
+</div>
+
+
+◆altは画像の説明を書く
+装飾アイコンの場合は省略可能（空altになる）
+--}}
+
+<div class="feature">
+
+    {{#if image}}
+    <div class="feature__image">
+        <img src="{{image}}" alt="{{alt}}">
+    </div>
+    {{/if}}
+
+    {{#if title}}
+    <h3 class="feature__title">
+        {{title}}
+    </h3>
+    {{/if}}
+
+    {{#if text}}
+    <p class="feature__text">
+        {{text}}
+    </p>
+    {{/if}}
+
+</div>

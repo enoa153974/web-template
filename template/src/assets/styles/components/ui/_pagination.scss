@@ -1,0 +1,83 @@
+@use '@/assets/styles/foundation/import' as *;
+
+// ------------------------------
+// ◆ pagenation
+// ------------------------------
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-s);
+
+    .pagination__list {
+        display: flex;
+        gap: var(--space-xs);
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .pagination__item a,
+        .pagination__item span {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: var(--radius);
+
+            background: #fff;
+            border: 1px solid #ddd;
+
+            font-size: var(--font-size-sm);
+
+            text-decoration: none;
+
+            @include media-query(md) {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        .pagination__item a:hover {
+            background: #f5f5f5;
+        }
+
+        .pagination__item.is-active span {
+            background: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+        }
+    }
+
+    .pagination__prev,
+    .pagination__next {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: var(--radius);
+
+        border: 1px solid #ddd;
+
+        text-decoration: none;
+    }
+}
+
+// ------------------------------
+// ◆ 配置別
+// ------------------------------
+.pagination--left {
+    justify-content: flex-start;
+}
+.pagination--right {
+    justify-content: flex-end;
+}

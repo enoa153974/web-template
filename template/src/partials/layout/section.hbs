@@ -1,0 +1,52 @@
+{{!--
+
+{{> section
+sectionClass="sectionClass--〇〇"
+id="service"
+data="service"
+eyebrow="service"
+title="サービス"
+lead="私たちのサービス一覧"
+body="
+<div class="c-service-list">
+    サービス内容
+</div>
+"
+}}
+でindex.htmlから呼び出して使う
+
+--}}
+<section
+    {{#if id}}id="{{id}}"
+    {{#if data}}data-section="{{data}}"{{/if}}
+    {{/if}} class="l-section {{#if sectionClass}}{{sectionClass}}{{/if}}">
+
+    <div class="l-container {{#if containerClass}}{{containerClass}}{{/if}}">
+        <div class="c-section {{#if innerClass}}{{innerClass}}{{/if}}">
+            {{#if title}}
+            <div class="c-section__header {{#if headerClass}}{{headerClass}}{{/if}}">
+
+                {{#if eyebrow}}
+                <p class="c-section__eyebrow">
+                    {{eyebrow}}
+                </p>
+                {{/if}}
+
+                {{#if title}}
+                <h2 class="c-section__title">{{title}}</h2>
+                {{/if}}
+
+                {{#if lead}}
+                <p class="c-section__lead">{{lead}}</p>
+                {{/if}}
+
+            </div>
+            {{/if}}
+
+            <div class="c-section__body {{#if bodyClass}}{{bodyClass}}{{/if}}">
+                {{{body}}}
+            </div>
+
+        </div>
+    </div>
+</section>

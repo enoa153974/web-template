@@ -1,0 +1,42 @@
+/* ==================================================
+Tabs
+--------------------------------------------------
+汎用タブUI
+
+用途
+・コース紹介
+・料金表
+・商品一覧
+・コンテンツ切り替え
+================================================== */
+
+.tabs {
+
+    &__nav {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+    }
+
+    &__btn {
+        padding: var(--space-s) var(--space-m);
+        cursor: pointer;
+        border: none;
+        background: none;
+        border-bottom: 2px solid transparent;
+        font-weight: bold;
+    }
+
+    &__btn.is-active {
+        border-bottom: 2px solid var(--main-color);
+    }
+
+    &__panel {
+        display: none;
+        padding: var(--space-m) 0;
+    }
+
+    &__panel.is-active {
+        display: block;
+    }
+
+}

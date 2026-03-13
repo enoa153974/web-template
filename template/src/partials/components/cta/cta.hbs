@@ -1,0 +1,55 @@
+{{!--
+
+◆使用例
+<section class="section section--cta">
+
+    <div class="container">
+        ◆１ボタンver
+        {{> cta
+        title="まずは無料相談"
+        text="お気軽にお問い合わせください"
+        primaryText="無料相談"
+        primaryUrl="/contact"
+        modifier="cta--primary"
+        }}
+
+        ◆２ボタンver
+        {{> cta
+        title="まずは無料相談"
+        text="お気軽にお問い合わせください"
+        primaryText="無料相談"
+        primaryUrl="/contact"
+        secondaryText="資料請求"
+        secondaryUrl="/download"
+        modifier="cta--split"
+        }}
+    </div>
+
+</section>
+
+--}}
+
+<section class="cta {{modifier}}">
+
+    {{#if title}}
+    <div class="cta__content">
+
+        {{#if title}}
+        <h2 class="cta__title">{{title}}</h2>
+        {{/if}}
+
+        {{#if text}}
+        <p class="cta__text">{{text}}</p>
+        {{/if}}
+
+    </div>
+    {{/if}}
+
+    {{> components/cta/cta-actions
+    primaryText=primaryText
+    primaryUrl=primaryUrl
+    secondaryText=secondaryText
+    secondaryUrl=secondaryUrl
+    }}
+
+</section>

@@ -1,89 +1,219 @@
-// ===============================
+// ==================================================
+// Foundation - Mixin
+// --------------------------------------------------
+// 各sassファイル冒頭で以下を読み込む
+//
+//@use '@/assets/styles/foundation/import' as *;
+//
+// これにより、以下のmixin/functionを使用可能。
+// ==================================================
 
-// Mixin
-//各sassファイルの冒頭で
-//@use '../../foundation/import' as *;
-//とすることで以下のように使うことができる
-//@include media-query(md) {
-  // スタイル内容}とする
-// ===============================
+@use './setting' as *;
 
+/* ==================================================
+Mixin: media-query
+-----------------------------------------------------
+用途:
+指定したブレイクポイント以下（max-width）で
+スタイルを適用する。
 
+引数:
+$breakpoint : $breakpoint-list に定義されたキー名
 
-// ブレイクポイントのマップ定義
-$breakpoints: (
-    "2xs": 360px,
-    "xs": 480px,
-    "sm": 576px,
-    "md": 768px,
-    "lg": 992px,
-    "xl": 1200px,
-    "2xl": 1400px
-);
+使用例:
+@include media-query(md) {
+    padding: 16px;
+}
 
-// ブレイクポイント名を渡して使う mixin
+注意:
+$breakpoint-list に存在しないキーは警告が出る。
+================================================== */
 @mixin media-query($breakpoint) {
-    $size: map-get($breakpoints, $breakpoint);
+    $size: map-get($breakpoint-list, $breakpoint);
 
     @if $size {
-        @media screen and (max-width: $size) {
+        @media screen and (max-width: #{$size}px) {
             @content;
         }
-    }
-
-    @else {
-        @warn "指定されたブレイクポイント「#{$breakpoint}」は定義されていません。";
+    } @else {
+        @warn "指定されたブレイクポイント「#{$breakpoint}」は $breakpoint-list に存在しません。";
     }
 }
 
+/* ==================================================
+Mixin: fluid-font
+-----------------------------------------------------
+用途:
+フォントサイズをclamp()で可変指定する。
 
-//フルイド(可変)フォント
-@mixin fluid-font($min, $max) {
-    font-size: clamp($min, 1.5vw, $max);
+引数:
+$min : 最小サイズ
+$max : 最大サイズ
+$vw  : 中間値（デフォルト 1.5vw）
+
+使用例:
+@include fluid-font(16px, 24px);
+
+備考:
+vw値はデザインに応じて調整可能。
+================================================== */
+@mixin fluid-font($min, $max, $vw: 1.5vw) {
+    font-size: clamp($min, $vw, $max);
 }
 
-//省略三点リーダー（1行）
-//max-width,widthが必須
-//必ず1行のテキストであること
-@mixin truncate {
+/* ==================================================
+Mixin: truncate
+-----------------------------------------------------
+用途:
+テキストを三点リーダーで省略表示する。
+
+引数:
+$lines : 行数（デフォルト 1）
+
+使用例:
+@include truncate;       // 1行
+@include truncate(2);    // 2行
+
+注意:
+width または max-width の指定が必要。
+================================================== */
+@mixin truncate($lines: 1) {
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+
+    @if $lines == 1 {
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
 }
 
-//角丸（可変）
-@mixin radius($size: 10px) {
+/* ==================================================
+Mixin: radius
+-----------------------------------------------------
+用途:
+角丸を適用する。
+
+引数:
+$size : 角丸サイズ（デフォルト 10px）
+$clip : true の場合 overflow:hidden を付与
+
+使用例:
+@include radius(12px);
+@include radius(12px, true);
+
+注意:
+clipをtrueにすると影などが切れる可能性あり。
+================================================== */
+@mixin radius($size: 10px, $clip: false) {
     border-radius: $size;
-    overflow: hidden;
+
+    @if $clip {
+        overflow: hidden;
+    }
 }
 
-//フレックス中央寄せ
-@mixin flex-center {
-    display: flex;
+/* ==================================================
+Mixin: flex-center
+-----------------------------------------------------
+用途:
+flexで上下左右中央寄せ。
+
+引数:
+$gap    : gap指定（任意）
+$inline : true で inline-flex
+
+使用例:
+@include flex-center;
+@include flex-center(8px);
+@include flex-center(null, true);
+================================================== */
+@mixin flex-center($gap: null, $inline: false) {
+    display: if($inline, inline-flex, flex);
     justify-content: center;
     align-items: center;
+
+    @if $gap != null {
+        gap: $gap;
+    }
 }
 
-//フレックス上下左右で配置
-@mixin flex-between {
-    display: flex;
+/* ==================================================
+Mixin: flex-between
+-----------------------------------------------------
+用途:
+左右配置（space-between）＋縦中央揃え。
+
+引数:
+$gap    : gap指定（任意）
+$inline : true で inline-flex
+
+使用例:
+@include flex-between;
+@include flex-between(16px);
+================================================== */
+@mixin flex-between($gap: null, $inline: false) {
+    display: if($inline, inline-flex, flex);
     justify-content: space-between;
     align-items: center;
+
+    @if $gap != null {
+        gap: $gap;
+    }
 }
 
-//レスポンシブマージン（上下余白）
+/* ==================================================
+Mixin: section-space
+-----------------------------------------------------
+用途:
+セクション上下余白を可変指定する。
+
+引数:
+$top    : 上余白
+$bottom : 下余白
+
+使用例:
+@include section-space(40px, 80px);
+
+備考:
+clamp() によりレスポンシブ対応。
+================================================== */
 @mixin section-space($top, $bottom) {
     margin-top: clamp($top, 2vw, $top * 1.5);
     margin-bottom: clamp($bottom, 2vw, $bottom * 1.5);
 }
 
-//汎用ボタンスタイル
-@mixin btn-base {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    font-weight: bold;
+/* ==================================================
+Mixin: btn-base
+-----------------------------------------------------
+用途:
+ボタンの基本スタイルを共通化する。
+
+引数:
+$radius : 角丸サイズ
+
+使用例:
+.btn {
+    @include btn-base;
+}
+
+.btn--primary {
+    @include btn-base(20px);
+}
+
+備考:
+色や背景は別途指定する。
+================================================== */
+@mixin btn-base($radius: 10px) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem 1.5rem;
+    font-weight: 700;
     text-align: center;
-    border-radius: var(--radius);
-    transition: all 0.3s ease;
+    border-radius: $radius;
+    transition: .3s ease;
     cursor: pointer;
 }

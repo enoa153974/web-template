@@ -1,0 +1,110 @@
+/* ==================================================
+Image Wrapper
+--------------------------------------------------
+画像表示用の共通ラッパー
+
+■目的
+--------------------------------------------------
+・画像のトリミングを統一
+・aspect-ratio管理
+・object-fit制御
+・カード / feature / voice / gallery 等で再利用
+
+■基本構造
+--------------------------------------------------
+
+.image-wrapper
+    └ img
+
+■使用例
+--------------------------------------------------
+
+<div class="image-wrapper image-wrapper--square">
+    <img src="/img/sample.jpg" alt="サンプル画像">
+</div>
+
+<div class="image-wrapper image-wrapper--circle">
+    <img src="/img/avatar.jpg" alt="ユーザー写真">
+</div>
+
+<div class="image-wrapper image-wrapper--16-9">
+    <img src="/img/hero.jpg" alt="ヒーロー画像">
+</div>
+
+================================================== */
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 画像基本設定 */
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==================================================
+Aspect Ratio
+================================================== */
+
+/* 正方形 */
+.image-wrapper--square {
+    aspect-ratio: 1 / 1;
+}
+
+/* 円形（プロフィール画像など） */
+.image-wrapper--circle {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+/* 横長 */
+.image-wrapper--16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+/* やや横長（記事カードなど） */
+.image-wrapper--4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+/* 縦長（スマホ画像など） */
+.image-wrapper--3-4 {
+    aspect-ratio: 3 / 4;
+}
+
+/* ==================================================
+Radius
+================================================== */
+
+.image-wrapper--radius-sm {
+    border-radius: var(--radius-sm);
+}
+
+.image-wrapper--radius {
+    border-radius: var(--radius);
+}
+
+.image-wrapper--radius-md {
+    border-radius: var(--radius-md);
+}
+
+.image-wrapper--radius-lg {
+    border-radius: var(--radius-lg);
+}
+
+/* ==================================================
+Hover Effect
+================================================== */
+
+.image-wrapper--zoom img {
+    transition: transform .3s ease;
+}
+
+.image-wrapper--zoom:hover img {
+    transform: scale(1.05);
+}

@@ -1,0 +1,84 @@
+<header class="header">
+    <div class="header__inner">
+
+        {{!-- logo --}}
+        {{#if isTop}}
+        <h1 class="header__logo">
+            <a href="/">
+                <img src="{{logo}}" alt="{{siteName}}">
+            </a>
+        </h1>
+        {{else}}
+        <div class="header__logo">
+            <a href="/">
+                <img src="{{logo}}" alt="{{siteName}}">
+            </a>
+        </div>
+        {{/if}}
+
+        <nav class="header__nav" aria-label="メインナビ">
+
+            <ul class="header__list">
+
+                {{#each navData}}
+
+                {{#if children}}
+
+                <li class="header__item header__item--has-children">
+
+                    <a href="{{url}}" class="header__link">
+                        {{label}}
+                    </a>
+
+                    <div class="header__mega">
+
+                        <ul class="header__sub-list">
+
+                            {{#each children}}
+                            <li class="header__sub-item">
+                                <a href="{{url}}" class="header__sub-link">
+                                    {{label}}
+                                </a>
+                            </li>
+                            {{/each}}
+
+                        </ul>
+
+                    </div>
+
+                </li>
+
+                {{else}}
+
+                <li class="header__item">
+                    <a href="{{url}}" class="header__link">
+                        {{label}}
+                    </a>
+                </li>
+
+                {{/if}}
+
+                {{/each}}
+
+                {{#if cta}}
+                <li class="header__item header__item--cta">
+                    <a href="{{cta.url}}" class="c-button c-button--primary">
+                        {{cta.label}}
+                    </a>
+                </li>
+                {{/if}}
+
+            </ul>
+
+        </nav>
+
+        <div class="header__overlay"></div>
+
+        <button class="header__toggle" aria-label="メニューを開閉">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</header>

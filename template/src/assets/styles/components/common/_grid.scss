@@ -1,0 +1,91 @@
+// ------------------------------
+// ◆ 使用例
+//
+//<div class="grid grid--3">
+//
+//    <div class="card"></div>
+//    <div class="card"></div>
+//    <div class="card"></div>
+//
+//</div>
+// ------------------------------
+
+@use '@/assets/styles/foundation/import' as *;
+
+.grid {
+
+    display: grid;
+    gap: var(--space-m);
+
+}
+
+
+/* =================================
+gap
+================================= */
+.grid--gap-s {
+    gap: var(--space-s);
+}
+
+.grid--gap-l {
+    gap: var(--space-l);
+}
+
+.grid--gap-xl {
+    gap: var(--space-xl);
+}
+
+/* =================================
+2カラム
+================================= */
+
+.grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* =================================
+3カラム
+================================= */
+
+.grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* =================================
+4カラム
+================================= */
+
+.grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* =================================
+auto
+================================= */
+
+.grid--auto {
+    @include grid-auto(250px, var(--space-l));
+}
+
+/* =================================
+中央寄せ
+note:claee="grid grid--auto grid--center"
+など等間隔に配置する際に使用
+================================= */
+.grid--center {
+    place-items: center center;
+}
+
+/* =================================
+responsive
+================================= */
+
+@include media-query(md) {
+
+    .grid--2,
+    .grid--3,
+    .grid--4 {
+        grid-template-columns: 1fr;
+    }
+
+}

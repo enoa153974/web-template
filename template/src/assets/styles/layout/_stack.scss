@@ -1,0 +1,93 @@
+// ==================================================
+// ■ Stack Layout
+// 縦方向に並ぶ要素の間隔（余白）を管理するレイアウトクラス
+//
+// 子要素同士の間隔を自動で作る。
+// コンポーネント内の縦リズムを統一できる。
+//
+// 基本は gap を使用。
+// gap 非対応環境では margin fallback を使用。
+//
+// 使用例
+// --------------------------------
+//
+// <div class="l-stack">
+//   <h2>タイトル</h2>
+//   <p>説明文</p>
+//   <a class="c-button">ボタン</a>
+// </div>
+//
+// サイズ変更
+//
+// <div class="l-stack l-stack--sm"></div>
+// <div class="l-stack l-stack--lg"></div>
+//
+// カスタム余白
+//
+// <div class="l-stack" style="--stack-space:40px"></div>
+//
+// ==================================================
+
+
+// ---------------------------------
+// base
+// ---------------------------------
+
+.l-stack {
+    --stack-space: var(--space-m);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-space);
+}
+
+
+// ---------------------------------
+// fallback (gap未対応環境)
+// ---------------------------------
+
+@supports not (gap: 1rem) {
+
+    .l-stack>*+* {
+        margin-top: var(--stack-space);
+    }
+
+}
+
+
+// ---------------------------------
+// size modifier
+// ---------------------------------
+
+.l-stack--xs {
+    --stack-space: var(--space-xs);
+}
+
+.l-stack--sm {
+    --stack-space: var(--space-s);
+}
+
+.l-stack--lg {
+    --stack-space: var(--space-l);
+}
+
+.l-stack--xl {
+    --stack-space: var(--space-xl);
+}
+
+
+// ---------------------------------
+// alignment
+// ---------------------------------
+
+.l-stack--center {
+    align-items: center;
+}
+
+.l-stack--start {
+    align-items: flex-start;
+}
+
+.l-stack--end {
+    align-items: flex-end;
+}

@@ -1,0 +1,60 @@
+@use '@/assets/styles/foundation/import' as *;
+
+/* ==================================================
+Logo list
+================================================== */
+
+.logo-list {
+    @include grid-auto(120px, var(--space-l));
+
+    align-items: center;
+
+}
+
+.logo-list__item {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-list__item img {
+
+    max-height: 48px;
+    width: auto;
+
+    filter: grayscale(100%);
+    opacity: .6;
+
+    transition: filter .3s ease, opacity .3s ease;
+
+}
+
+.logo-list__item:hover img {
+
+    filter: grayscale(0%);
+    opacity: 1;
+
+}
+
+/* ------------------------------
+サイズ
+------------------------------ */
+
+.logo-list--sm {
+    @include grid-auto(100px, var(--space-m));
+}
+
+.logo-list--lg {
+    @include grid-auto(160px, var(--space-xl));
+}
+
+/* ------------------------------
+カラー
+------------------------------ */
+
+.logo-list--color img {
+    filter: none;
+    opacity: 1;
+}

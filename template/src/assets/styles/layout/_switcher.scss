@@ -1,0 +1,76 @@
+// ==================================================
+// ■ Switcher Layout
+//
+// 横並びレイアウトを作り、一定幅以下で縦並びに切り替える。
+// Flexboxを利用したレスポンシブレイアウトパターン。
+//
+// 主な用途
+// ---------------------------------
+// ・画像＋テキスト
+// ・Feature紹介
+// ・Aboutセクション
+// ・カード横並び
+//
+// 使用例
+// ---------------------------------
+//
+// <div class="l-switcher">
+//   <div>item1</div>
+//   <div>item2</div>
+// </div>
+//
+// カラム数制御
+//
+// <div class="l-switcher l-switcher--3"></div>
+//
+// ==================================================
+
+
+/* ---------------------------------
+ * base
+ * --------------------------------- */
+
+.l-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--base-gap-size);
+
+
+    >* {
+        flex-grow: 1;
+        flex-basis: calc((var(--layout-switch-threshold) - 100%) * 999);
+    }
+}
+
+
+/* ---------------------------------
+ * item
+ * --------------------------------- */
+
+.l-switcher>* {
+    flex-grow: 1;
+    flex-basis: calc((var(--switcher-threshold) - 100%) * 999);
+}
+
+
+/* ---------------------------------
+ * column modifiers
+ * --------------------------------- */
+
+/* 2カラム */
+
+.l-switcher--2>* {
+    min-width: calc((100% - var(--base-gap-size)) / 2);
+}
+
+/* 3カラム */
+
+.l-switcher--3>* {
+    min-width: calc((100% - (var(--base-gap-size) * 2)) / 3);
+}
+
+/* 4カラム */
+
+.l-switcher--4>* {
+    min-width: calc((100% - (var(--base-gap-size) * 3)) / 4);
+}

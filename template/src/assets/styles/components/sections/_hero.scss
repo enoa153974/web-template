@@ -1,0 +1,119 @@
+@use '@/assets/styles/foundation/import' as *;
+
+.c-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+
+    color: #fff;
+
+    overflow: hidden;
+
+    /* 背景 */
+    &__bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    /* オーバーレイ */
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,.45);
+        z-index: 1;
+    }
+
+    /* コンテンツ */
+    &__content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+    }
+
+    /* タイトル */
+    &__title {
+        font-size:var(--font-size-3xl);
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    /* リード */
+    &__lead {
+        margin-top: 24px;
+        font-size: ar(--font-size-xl);
+        line-height: 1.6;
+    }
+
+    /* CTA */
+    &__actions {
+        margin-top: var(--space-xl);
+        display: inline-flex;
+        gap: var(--space-s);
+
+    }
+
+
+}
+
+// ------------------------------
+// ◆ バリエーション
+// ------------------------------
+/* 中央配置 */
+.c-hero--center {
+
+    text-align: center;
+
+    .c-hero__content {
+        margin-inline: auto;
+    }
+
+    .c-hero__actions {
+        justify-content: center;
+    }
+
+}
+
+
+/* 左寄せ */
+.c-hero--left {
+    text-align: left;
+}
+
+/* 右寄せ */
+.c-hero--right {
+    text-align: right;
+
+    .c-hero__content {
+        margin-left: auto;
+    }
+}
+
+/*split hero【 テキスト | 画像 】 */
+.c-hero--split {
+
+    .l-container {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+        align-items: center;
+
+    }
+
+    @include media-query(md) {
+
+        .l-container {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+}

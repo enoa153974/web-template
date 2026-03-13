@@ -1,0 +1,87 @@
+{
+    "plans": [
+        {
+            "name": "ライト",
+            "price": "¥10,000",
+            "cta": {
+                "text": "申し込む",
+                "link": "/contact/"
+            }
+        },
+        {
+            "name": "スタンダード",
+            "price": "¥30,000",
+            "popular": true,
+            "cta": {
+                "text": "申し込む",
+                "link": "/contact/"
+            }
+        },
+        {
+            "name": "プレミアム",
+            "price": "¥50,000",
+            "cta": {
+                "text": "申し込む",
+                "link": "/contact/"
+            }
+        }
+    ],
+    "features": [
+        {
+            "label": "初期設定",
+            "values": [
+                {
+                    "type": "check"
+                },
+                {
+                    "type": "check"
+                },
+                {
+                    "type": "check"
+                }
+            ]
+        },
+        {
+            "label": "サポート",
+            "values": [
+                {
+                    "text": "メール"
+                },
+                {
+                    "text": "チャット"
+                },
+                {
+                    "text": "優先サポート"
+                }
+            ]
+        },
+        {
+            "label": "月次レポート",
+            "values": [
+                {
+                    "type": "dash"
+                },
+                {
+                    "type": "check"
+                },
+                {
+                    "type": "check"
+                }
+            ]
+        },
+        {
+            "label": "保存容量",
+            "values": [
+                {
+                    "text": "10GB"
+                },
+                {
+                    "text": "100GB"
+                },
+                {
+                    "text": "無制限"
+                }
+            ]
+        }
+    ]
+}

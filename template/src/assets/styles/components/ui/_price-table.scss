@@ -1,0 +1,100 @@
+/* ==================================================
+Price Table
+--------------------------------------------------
+料金比較テーブル
+
+■用途
+LPの料金比較
+
+例
+Basic / Standard / Premium
+
+■構造
+--------------------------------------------------
+
+.price-table
+    └ price-table__table
+        ├ thead
+        └ tbody
+        ├ price-table__row
+        ├ price-table__feature
+        ├ price-table__value
+        └ price-table__price
+
+================================================== */
+
+.price-table {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.price-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.price-table th,
+.price-table td {
+    padding: 20px 16px;
+}
+
+.price-table__feature {
+    text-align: left;
+    font-weight: 600;
+    width: 220px;
+}
+
+.price-table__row {
+    border-top: 1px solid #e5e5e5;
+}
+
+.price-table__plan {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.price-table__plan--popular {
+    background: #fff5e6;
+}
+
+.price-table__badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    background: #ff6a00;
+    color: #fff;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.price-table__value {
+    font-size: 14px;
+}
+
+.price-table__price {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+
+    .c-button.c-button--primary{
+        font-size: 2rem;
+    }
+}
+
+.price-table__row-price {
+    border-top: 2px solid #ddd;
+}
+
+.icon--check::before {
+    content: "◎";
+    color: var(--sub-color);
+    font-weight:var(--font-weight-bold);
+    font-size: var(--font-size-2xl);
+}
+
+.icon--dash::before {
+    content: "—";
+    color: #555;
+    font-weight:var(--font-weight-bold);
+}

@@ -1,0 +1,50 @@
+<section class="price-plan">
+    <div class="price-plan__list">
+
+        {{#each pricePlans.plans}}
+
+        <article class="price-plan__card {{#if featured}}price-plan__card--featured{{/if}}">
+
+            {{#if badge}}
+            <div class="price-plan__badge">
+                {{badge}}
+            </div>
+            {{/if}}
+
+            <h3 class="price-plan__name">
+                {{name}}
+            </h3>
+
+            <p class="price-plan__price">
+                {{price}}
+            </p>
+
+            {{#if description}}
+            <p class="price-plan__description">
+                {{description}}
+            </p>
+            {{/if}}
+
+            <ul class="price-plan__features">
+
+                {{#each features}}
+
+                <li class="price-plan__feature {{icon}}">
+                    {{label}}
+                </li>
+
+                {{/each}}
+
+            </ul>
+
+            <a href="{{ctaLink}}" class="c-button c-button--primary price-plan__cta">
+                {{ctaText}}
+            </a>
+
+        </article>
+
+        {{/each}}
+
+    </div>
+
+</section>

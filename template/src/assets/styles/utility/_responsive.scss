@@ -1,0 +1,27 @@
+@use '@/assets/styles/foundation/import' as *;
+/* ==================================================
+    Utility: responsive visibility
+    --------------------------------------------------
+    デバイスごとの表示制御
+
+    使用例
+    ---------------------------------
+    <div class="u-sp-only"></div>
+    <div class="u-pc-only"></div>
+================================================== */
+
+.u-sp-only {
+    display: none;
+
+    @include media-query(md) {
+        display: block;
+    }
+}
+
+.u-pc-only {
+    display: block;
+
+    @include media-query(md) {
+        display: none;
+    }
+}

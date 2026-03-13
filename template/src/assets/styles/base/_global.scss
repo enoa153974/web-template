@@ -1,43 +1,57 @@
-/* === デバッグ用各要素アウトライン
-* {
-    outline: 1px solid red;
-} === */
-@use '../layout/module' as *;
 /* ベース */
+
 body {
     font-family: var(--font-jp);
     font-size: var(--font-size-base);
-    line-height: 1.6;
-    color: #333;
+    line-height: 1.7;
+    color: var(--text-color);
     background-color: var(--bg-color);
 }
+
 body.no-scroll {
     overflow: hidden;
     height: 100%;
 }
+
+/* 見出し */
+
 h1 {
-    font-size: clamp(24px, 2.86vw, 40px);
+    font-size: var(--font-size-4xl);
+    line-height: 1.3;
 }
 
 h2 {
     font-size: var(--font-size-2xl);
+    line-height: 1.3;
 }
 
 h3 {
     font-size: var(--font-size-xl);
+    line-height: 1.3;
 }
+
+/* 画像 */
 
 img {
     max-width: 100%;
     height: auto;
+    vertical-align: bottom;
 }
+
+/* リンク */
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: opacity .3s;
 }
 
-/* .main-wrapper{
-    background-color: #fff;
-    margin: 0 10%;
-} */
+a:hover {
+    opacity: .7;
+}
+
+/* リスト */
+
+ul,ol {
+    list-style: none;
+}

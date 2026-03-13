@@ -1,7 +1,291 @@
-.header__container{
-    height: var(--header-height);
+@use '@/assets/styles/foundation/import' as *;
+
+.header {
+    background: #fff;
+    position: relative;
+    z-index: 100;
 }
 
-.hamburger{
-    display: none;
+.header__nav {
+    width: 100%;
+}
+
+.header__inner {
+    height: var(--header-height);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding-inline: var(--space-m);
+
+    display: flex;
+    align-items: center;
+}
+
+.header__logo img {
+    height: 40px;
+}
+
+/* nav */
+
+.header__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style: none;
+}
+
+.header__item {
+    position: relative;
+}
+
+.header__link {
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.header__item--cta {
+    display: flex;
+    align-items: center;
+}
+
+/* =========================
+mega menu PC
+========================= */
+
+.header__mega {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: #fff;
+    min-width: 200px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    transition: .25s;
+}
+
+.header__item--has-children:hover>.header__mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header__sub-list {
+    list-style: none;
+    padding: 1rem;
+}
+
+.header__sub-item a {
+    display: block;
+    padding: .5rem 0;
+}
+
+/* =========================
+SP Navigation
+========================= */
+
+@include media-query(md) {
+    // ------------------------------
+    // ◆ハンバーガーボタン 
+    // ------------------------------
+    
+
+    .header__toggle {
+        display: block;
+        margin-left: auto;
+        z-index: 2000;
+        position: relative;
+        cursor: pointer;
+        width: 62px;
+        height: 62px;
+    }
+
+    /*ボタン内側*/
+    .header__toggle span {
+        display: inline-block;
+        transition: all 0.4s;
+        position: absolute;
+        left: 10px;
+        height: 2px;
+        border-radius: 2px;
+        background: #000;
+        width: 46%;
+        margin-top: 7px;
+    }
+
+
+    //3本線
+    .header__toggle span:nth-of-type(1) {
+        top: 15px;
+    }
+
+    .header__toggle span:nth-of-type(2) {
+        top: 23px;
+    }
+
+    .header__toggle span:nth-of-type(3) {
+        top: 31px;
+    }
+
+    /*activeクラスが付与されると1・3番目の要素が2番目の要素と同じ位置になり一本線に*/
+
+    .header__toggle.is-active span:nth-of-type(1),
+    .header__toggle.is-active span:nth-of-type(3) {
+        top: 23px;
+    }
+
+    /* ナビ本体 */
+
+    .header__nav {
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        width: 320px;
+        max-width: 85%;
+
+        height: 100vh;
+
+        background: #fff;
+
+        padding: 90px 24px 40px;
+
+        display: flex;
+        flex-direction: column;
+
+        transition: right .4s ease;
+
+        z-index: 1500;
+
+    }
+
+
+    /* 開いた状態 */
+
+    .header__nav.is-open {
+        right: 0;
+        
+    }
+
+
+    /* ナビリスト */
+
+    .header__list {
+
+        display: flex;
+        flex-direction: column;
+        gap:0;
+
+    }
+
+
+    /* メニュー項目 */
+
+    .header__item {
+        width: 100%;
+    }
+
+
+    /* メニューリンク */
+
+    .header__link {
+        display: flex;
+        font-size: var(--font-size-lg);
+        font-weight: 600;
+
+    }
+
+
+    /* サブメニュー */
+
+    .header__mega {
+
+        position: static;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+
+        max-height: 0;
+        overflow: hidden;
+
+        margin-top: 12px;
+
+        transition: max-height .35s ease;
+
+    }
+
+
+    /* アコーディオン開閉 */
+
+    .header__item.open .header__mega {
+        max-height: 400px;
+    }
+
+
+    /* サブリンク */
+
+    .header__sub-link {
+
+        display: block;
+
+        padding: 10px 0;
+
+        font-size: 16px;
+
+    }
+
+
+    /* CTA */
+
+    .header__item--cta {
+
+        margin-top: auto;
+
+    }
+
+    .header__item--cta .c-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    // ------------------------------
+    // ◆ overlay
+    // ------------------------------
+
+    .header__overlay {
+
+        position: fixed;
+        inset: 0;
+
+        background: rgba(0, 0, 0, .4);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity .3s;
+
+        z-index: 1400;
+
+    }
+
+    .header__overlay.is-open {
+
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+    body.no-scroll {
+        overflow: hidden;
+    }
+
 }

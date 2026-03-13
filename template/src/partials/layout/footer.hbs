@@ -1,0 +1,50 @@
+<footer class="footer">
+    <div class="footer__inner">
+
+        <!-- ロゴ + 説明 -->
+        <div class="footer__brand">
+            <img src="{{logo}}" alt="{{siteName}}" class="footer__logo">
+            {{#if description}}
+            <p class="footer__description">{{description}}</p>
+            {{/if}}
+        </div>
+
+        <!-- ナビ -->
+        {{#if navData}}
+        <nav class="footer__nav" aria-label="フッターナビ">
+            <ul class="footer__list">
+
+                {{#each navData}}
+                <li class="footer__item">
+                    <a href="{{url}}" class="footer__link">{{label}}</a>
+
+                    {{#if showChildrenInFooter}}
+                    {{#if children}}
+                    <ul class="footer__sub-list">
+                        {{#each children}}
+                        <li class="footer__sub-item">
+                            <a href="{{url}}" class="footer__sub-link">
+                                {{label}}
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                    {{/if}}
+
+                </li>
+                {{/each}}
+
+            </ul>
+        </nav>
+        {{/if}}
+
+        <!-- コピーライト -->
+        <div class="footer__bottom">
+            <small class="footer__copyright">
+                © {{year}} {{siteName}}
+            </small>
+        </div>
+
+    </div>
+</footer>
