@@ -1,0 +1,17 @@
+{
+    "siteName": "Company",
+    "siteUrl": "https://example.com",
+
+    "defaultTitle": "Company",
+    "defaultDescription": "会社の公式サイトです。",
+    "defaultOgImage": "/images/ogp.jpg",
+
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@example",
+
+    "locale": "ja_JP",
+    "themeColor": "#ffffff",
+
+    "ogImageWidth": "1200",
+    "ogImageHeight": "630"
+}

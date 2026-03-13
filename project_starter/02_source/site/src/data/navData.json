@@ -18,8 +18,8 @@
         ]
     },
     {
+        "url": "/service/",
         "label": "サービス",
-        "url": "/service",
         "footer": true,
         "showChildrenInFooter": true,
         "children": [

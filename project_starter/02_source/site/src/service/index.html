@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+
+    {{> layout/head
+    site=site
+    title="サービス概要"
+    description="サービス概要ページ"
+    path="/service/"
+    ogType="article"
+
+    }}
+
+</head>
+
+<body class="page-service">
+    {{> layout/header
+    isTop=false
+    logo="/assets/image/logo.png"
+    siteName="Sample Inc"
+    nav=navData
+    cta=ctaData
+    }}
+
+    <main class="l-main">
+        <section class="l-section l-section--hero">
+            <div class="l-container">
+                {{> sections/hero }}
+            </div>
+        </section>
+
+        <section class="l-section l-section--cta">
+            <div class="">
+                {{> components/cta/cta
+                title="まずは無料相談"
+                text="お気軽にお問い合わせください"
+                primaryText="無料相談"
+                primaryUrl="/contact"
+                modifier="cta--hero-banner cta--center"
+                }}
+            </div>
+        </section>
+
+
+    </main>
+
+
+    {{> layout/footer
+    logo="/assets/image/logo.png"
+    siteName="Sample Inc"
+    description="企業説明テキストが入ります"
+    nav=navData
+    year="2026"
+    }}
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

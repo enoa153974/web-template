@@ -1,0 +1,81 @@
+{{!-- site.jsonからmeta情報を差し込めます
+呼び出しは
+
+◆ トップページ【index.html】
+<head>
+
+    {{> layout/head
+    site=site
+    title="トップページ"
+    description="サービスの紹介ページ"
+    path="/"
+    ogType="website"
+    }}
+
+</head>
+
+◆ 下層ページ【src/pages/about/index.html】
+<head>
+
+    {{> layout/head
+    site=site
+    title="会社概要"
+    description="会社概要ページ"
+    path="/about/"
+    ogType="article"
+
+    }}
+
+</head>
+
+ページでogp変えるときだけ
+    ogImage=site.defaultOgImage
+で指定
+--}}
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+{{#if title}}
+{{title}} | {{site.siteName}}
+{{else}}
+{{site.defaultTitle}}
+{{/if}}
+</title>
+
+<meta name="description"
+content="{{#if description}}{{description}}{{else}}{{site.defaultDescription}}{{/if}}">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="{{site.siteUrl}}{{path}}">
+
+<meta property="og:title"
+content="{{#if title}}{{title}} | {{site.siteName}}{{else}}{{site.defaultTitle}}{{/if}}">
+
+<meta property="og:description"
+content="{{#if description}}{{description}}{{else}}{{site.defaultDescription}}{{/if}}">
+
+<meta property="og:type" content="{{ogType}}">
+
+<meta property="og:url" content="{{site.siteUrl}}{{path}}">
+
+<meta property="og:image"
+content="{{#if ogImage}}{{ogImage}}{{else}}{{site.defaultOgImage}}{{/if}}">
+
+<meta property="og:site_name" content="{{site.siteName}}">
+
+<meta property="og:locale" content="{{site.locale}}">
+
+<meta name="twitter:card" content="{{site.twitterCard}}">
+
+<meta name="twitter:title"
+content="{{#if title}}{{title}} | {{site.siteName}}{{else}}{{site.defaultTitle}}{{/if}}">
+
+<meta name="twitter:description"
+content="{{#if description}}{{description}}{{else}}{{site.defaultDescription}}{{/if}}">
+
+<meta name="twitter:image"
+content="{{#if ogImage}}{{ogImage}}{{else}}{{site.defaultOgImage}}{{/if}}">
